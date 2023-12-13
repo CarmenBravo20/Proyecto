@@ -2,32 +2,21 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.proyectos.proyectos.entity;
+package com.proyectos.proyectos.dto;
 
 import java.math.BigDecimal;
 import java.util.Date;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
 
 /**
  *
  * @author Carmen
  */
-@Entity
-@Table(name="proyecto")
-public class Proyecto {
+public class ProyectoDto {
     
-    @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
-    @Column
     private Integer id;
+    private PersonaDto responsable;
+    private ProcesoDto proceso;
+    private AreaDto area;
     private String denominacion;
     private String detalleArrastre;
     private Date fechaInicio;
@@ -43,21 +32,10 @@ public class Proyecto {
     private Date fechaModificacion;
     private String usuarioCreacion;
     private String usuarioModificacion;
-    
-@JoinColumn(name="responsable",referencedColumnName = "id")
-@ManyToOne(fetch = FetchType.EAGER)
-private Persona responsable;
 
-@JoinColumn(name="proceso",referencedColumnName = "id")
-@ManyToOne(fetch = FetchType.EAGER)
-private Proceso proceso;
+   
 
-
-@JoinColumn(name="area",referencedColumnName = "id")
-@ManyToOne(fetch = FetchType.EAGER)
-private Area area;
-
-    public Proyecto() {
+    public ProyectoDto() {
     }
 
     public Integer getId() {
@@ -68,12 +46,36 @@ private Area area;
         this.id = id;
     }
 
-    public String getDescripcion() {
+    public PersonaDto getResponsable() {
+        return responsable;
+    }
+
+    public void setResponsable(PersonaDto responsable) {
+        this.responsable = responsable;
+    }
+
+    public ProcesoDto getProceso() {
+        return proceso;
+    }
+
+    public void setProceso(ProcesoDto proceso) {
+        this.proceso = proceso;
+    }
+
+    public AreaDto getArea() {
+        return area;
+    }
+
+    public void setArea(AreaDto area) {
+        this.area = area;
+    }
+
+    public String getDenominacion() {
         return denominacion;
     }
 
-    public void setDescripcion(String descripcion) {
-        this.denominacion = descripcion;
+    public void setDenominacion(String denominacion) {
+        this.denominacion = denominacion;
     }
 
     public String getDetalleArrastre() {
@@ -115,8 +117,6 @@ private Area area;
     public void setEstado(Character estado) {
         this.estado = estado;
     }
-
-   
 
     public BigDecimal getCostoProyecto() {
         return costoProyecto;
@@ -189,33 +189,6 @@ private Area area;
     public void setUsuarioModificacion(String usuarioModificacion) {
         this.usuarioModificacion = usuarioModificacion;
     }
-
-    public Persona getResponsable() {
-        return responsable;
-    }
-
-    public void setResponsable(Persona responsable) {
-        this.responsable = responsable;
-    }
-
-    public Proceso getProceso() {
-        return proceso;
-    }
-
-    public void setProceso(Proceso proceso) {
-        this.proceso = proceso;
-    }
-
-    public Area getArea() {
-        return area;
-    }
-
-    public void setArea(Area area) {
-        this.area = area;
-    }
-
-
-
-
     
-}
+
+   }

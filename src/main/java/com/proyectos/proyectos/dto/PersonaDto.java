@@ -2,31 +2,20 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.proyectos.proyectos.entity;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+package com.proyectos.proyectos.dto;
 
 /**
  *
  * @author Carmen
  */
-@Entity
-@Table(name="persona")
-public class Persona {
-        
-    @Id
+public class PersonaDto {
     private Integer id;
     private String identificacion;
     private String nombre;
     private String apellido;
 
-    public Persona() {
+    public PersonaDto() {
     }
-    
-    
 
     public Integer getId() {
         return id;
@@ -60,16 +49,6 @@ public class Persona {
         this.apellido = apellido;
     }
     
-   
-    
-  
-
-    
-
-   
-    
-  
     
     
 }
-

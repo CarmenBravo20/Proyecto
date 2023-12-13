@@ -2,30 +2,19 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.proyectos.proyectos.entity;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+package com.proyectos.proyectos.dto;
 
 /**
  *
  * @author Carmen
  */
-@Entity
-@Table(name="area")
-public class Area {
+public class ProcesoDto {
     
-    @Id
-    @Column
     private Integer id;
     private String descripcion;
 
-    public Area() {
+    public ProcesoDto() {
     }
-    
-  
 
     public Integer getId() {
         return id;
@@ -42,7 +31,7 @@ public class Area {
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
-  
+    
     
     
 }

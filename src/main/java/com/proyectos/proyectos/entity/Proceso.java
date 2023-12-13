@@ -4,14 +4,14 @@
  */
 package com.proyectos.proyectos.entity;
 
-import javax.persistence.Column;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 /**
  *
- * @author Owner
+ * @author Carmen
  */
 @Entity
 @Table(name="proceso")
