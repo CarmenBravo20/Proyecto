@@ -21,12 +21,12 @@ import javax.persistence.Table;
  * @author Carmen
  */
 @Entity
-@Table(name="proyecto")
+@Table(name = "proyecto")
 public class Proyecto {
-    
+
     @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String denominacion;
     private String detalleArrastre;
@@ -43,19 +43,15 @@ public class Proyecto {
     private Date fechaModificacion;
     private String usuarioCreacion;
     private String usuarioModificacion;
-    
-@JoinColumn(name="responsable",referencedColumnName = "id")
-@ManyToOne(fetch = FetchType.EAGER)
-private Persona responsable;
-
-@JoinColumn(name="proceso",referencedColumnName = "id")
-@ManyToOne(fetch = FetchType.EAGER)
-private Proceso proceso;
-
-
-@JoinColumn(name="area",referencedColumnName = "id")
-@ManyToOne(fetch = FetchType.EAGER)
-private Area area;
+    @JoinColumn(name = "responsable", referencedColumnName = "id")
+    @ManyToOne(fetch = FetchType.EAGER)
+    private Persona responsable;
+    @JoinColumn(name = "proceso", referencedColumnName = "id")
+    @ManyToOne(fetch = FetchType.EAGER)
+    private Proceso proceso;
+    @JoinColumn(name = "area", referencedColumnName = "id")
+    @ManyToOne(fetch = FetchType.EAGER)
+    private Area area;
 
     public Proyecto() {
     }
@@ -68,12 +64,12 @@ private Area area;
         this.id = id;
     }
 
-    public String getDescripcion() {
+    public String getDenominacion() {
         return denominacion;
     }
 
-    public void setDescripcion(String descripcion) {
-        this.denominacion = descripcion;
+    public void setDenominacion(String denominacion) {
+        this.denominacion = denominacion;
     }
 
     public String getDetalleArrastre() {
@@ -115,8 +111,6 @@ private Area area;
     public void setEstado(Character estado) {
         this.estado = estado;
     }
-
-   
 
     public BigDecimal getCostoProyecto() {
         return costoProyecto;
@@ -214,8 +208,4 @@ private Area area;
         this.area = area;
     }
 
-
-
-
-    
 }

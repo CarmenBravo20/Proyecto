@@ -14,9 +14,7 @@ import java.util.Date;
 public class ProyectoDto {
     
     private Integer id;
-    private PersonaDto responsable;
-    private ProcesoDto proceso;
-    private AreaDto area;
+   
     private String denominacion;
     private String detalleArrastre;
     private Date fechaInicio;
@@ -33,7 +31,9 @@ public class ProyectoDto {
     private String usuarioCreacion;
     private String usuarioModificacion;
 
-   
+    private PersonaDto responsable;
+    private ProcesoDto proceso;
+    private AreaDto area;
 
     public ProyectoDto() {
     }
@@ -41,34 +41,10 @@ public class ProyectoDto {
     public Integer getId() {
         return id;
     }
-
-    public void setId(Integer id) {
+     public void setId(Integer id) {
         this.id = id;
     }
 
-    public PersonaDto getResponsable() {
-        return responsable;
-    }
-
-    public void setResponsable(PersonaDto responsable) {
-        this.responsable = responsable;
-    }
-
-    public ProcesoDto getProceso() {
-        return proceso;
-    }
-
-    public void setProceso(ProcesoDto proceso) {
-        this.proceso = proceso;
-    }
-
-    public AreaDto getArea() {
-        return area;
-    }
-
-    public void setArea(AreaDto area) {
-        this.area = area;
-    }
 
     public String getDenominacion() {
         return denominacion;
@@ -190,5 +166,30 @@ public class ProyectoDto {
         this.usuarioModificacion = usuarioModificacion;
     }
     
+   
+
+    public PersonaDto getResponsable() {
+        return responsable;
+    }
+
+    public void setResponsable(PersonaDto responsable) {
+        this.responsable = responsable;
+    }
+
+    public ProcesoDto getProceso() {
+        return proceso;
+    }
+
+    public void setProceso(ProcesoDto proceso) {
+        this.proceso = proceso;
+    }
+
+    public AreaDto getArea() {
+        return area;
+    }
+
+    public void setArea(AreaDto area) {
+        this.area = area;
+    }
 
    }
