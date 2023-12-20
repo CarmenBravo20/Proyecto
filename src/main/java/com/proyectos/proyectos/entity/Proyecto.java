@@ -6,6 +6,7 @@ package com.proyectos.proyectos.entity;
 
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -14,6 +15,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
@@ -22,7 +24,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "proyecto")
-public class Proyecto {
+public class Proyecto extends CamposAuditoria{
 
     @Id
     @Column
@@ -39,10 +41,7 @@ public class Proyecto {
     private String tipo;
     private Boolean recurrente;
     private Boolean arrastre;
-    private Date fechaCreacion;
-    private Date fechaModificacion;
-    private String usuarioCreacion;
-    private String usuarioModificacion;
+    
     @JoinColumn(name = "responsable", referencedColumnName = "id")
     @ManyToOne(fetch = FetchType.EAGER)
     private Persona responsable;
@@ -52,7 +51,7 @@ public class Proyecto {
     @JoinColumn(name = "area", referencedColumnName = "id")
     @ManyToOne(fetch = FetchType.EAGER)
     private Area area;
-
+    
     public Proyecto() {
     }
 
@@ -152,38 +151,6 @@ public class Proyecto {
         this.arrastre = arrastre;
     }
 
-    public Date getFechaCreacion() {
-        return fechaCreacion;
-    }
-
-    public void setFechaCreacion(Date fechaCreacion) {
-        this.fechaCreacion = fechaCreacion;
-    }
-
-    public Date getFechaModificacion() {
-        return fechaModificacion;
-    }
-
-    public void setFechaModificacion(Date fechaModificacion) {
-        this.fechaModificacion = fechaModificacion;
-    }
-
-    public String getUsuarioCreacion() {
-        return usuarioCreacion;
-    }
-
-    public void setUsuarioCreacion(String usuarioCreacion) {
-        this.usuarioCreacion = usuarioCreacion;
-    }
-
-    public String getUsuarioModificacion() {
-        return usuarioModificacion;
-    }
-
-    public void setUsuarioModificacion(String usuarioModificacion) {
-        this.usuarioModificacion = usuarioModificacion;
-    }
-
     public Persona getResponsable() {
         return responsable;
     }
@@ -207,5 +174,11 @@ public class Proyecto {
     public void setArea(Area area) {
         this.area = area;
     }
+
+   
+
+   
+    
+    
 
 }

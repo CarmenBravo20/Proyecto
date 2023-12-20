@@ -6,6 +6,7 @@ package com.proyectos.proyectos.dto;
 
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.List;
 
 /**
  *
@@ -34,6 +35,9 @@ public class ProyectoDto {
     private PersonaDto responsable;
     private ProcesoDto proceso;
     private AreaDto area;
+    
+    private List<ProyectoHitoDto> hitos;
+    private List<PropositoDto> propositos;
 
     public ProyectoDto() {
     }
@@ -191,5 +195,24 @@ public class ProyectoDto {
     public void setArea(AreaDto area) {
         this.area = area;
     }
+
+    public List<ProyectoHitoDto> getHitos() {
+        return hitos;
+    }
+
+    public void setHitos(List<ProyectoHitoDto> Hitos) {
+        this.hitos = Hitos;
+    }
+
+    public List<PropositoDto> getPropositos() {
+        return propositos;
+    }
+
+    public void setPropositos(List<PropositoDto> propositos) {
+        this.propositos = propositos;
+    }
+
+  
+    
 
    }
